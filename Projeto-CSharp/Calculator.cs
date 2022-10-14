@@ -25,7 +25,8 @@
         this.Result = firstNum / secondNum;
     }
 
-    public void ListCaculator() // Listar todos os itens da Lista
+    //------------------------- Imprimir Números da Lista ---------------------------------------
+    public void ListCaculator()
     {
 
         if (calculatorList.Count == 0)
@@ -47,14 +48,16 @@
         }
     }
 
-    public void ListCount() // Contar quantos itens tem na Lista
+    //------------------------- Imprimir a quantidade de Números na Lista ---------------------------------------
+    public void ListCount() 
     {
 
         Console.WriteLine($"EXISTEM {calculatorList.Count} NÚMEROS NA LISTA!");
 
     }
 
-    public void ListGrowningNumber() // Mostrar os itens da lista em ordem crescente
+    //------------------------- Imprimir em ordem crescente a Lista ---------------------------------------
+    public void ListGrowningNumber()
     {
 
         if (calculatorList.Count == 0)
@@ -78,7 +81,8 @@
         }
     }
 
-    public void ListDecreasingNumber() // Mostrar os itens da lista em ordem decrescente
+    //------------------------- Imprimir em ordem decrescente a Lista ---------------------------------------
+    public void ListDecreasingNumber() 
     {
 
         if (calculatorList.Count == 0)
@@ -102,7 +106,8 @@
 
     }
 
-    public void ListDuplicate() // Mostrar os itens duplicados na Lista
+    //------------------------- Imprimir Itens Duplicado na Lista ---------------------------------------
+    public void ListDuplicate()
     {
 
         if (calculatorList.Count == 0)
@@ -124,7 +129,8 @@
         }
     }
 
-    public void ListRemoveItens() // Remover todos os itens da Lista
+    //------------------------- Remoção do Itens da Lista ---------------------------------------
+    public void ListRemoveItens() 
     {
 
         calculatorList.Clear();

@@ -8,13 +8,15 @@ class MainProgram
     static void Main(string[] args)
     {
 
+        //-------------------------- Criação de Objetos --------------------------------------
+        
         Calulator calculator = new Calulator();
         Person person = new Person();
         PrintOut print = new PrintOut();
 
-        //----------------------------------------------------------------
 
-        // Criação de Delegates para os Menus
+        //-------------------------- Criação de Delegates --------------------------------------
+
         MenuSystem menuResgisterUser = new MenuSystem(print.PrintRegistrationPerson);
         MenuSystem checkName = new MenuSystem(print.printCheckNameError);
         MenuSystem checkAge = new MenuSystem(print.printCheckAgeError);
@@ -58,13 +60,13 @@ class MainProgram
 
                 int i = 1;
 
-                // Laço de Repetição - Menu Sistema
+                //---------------------- Laço de Repetição: Menu Sistema --------------------------------------
 
                 while (i != 0)
                 {
 
                     menuSystem();
-                    int choiceMenu = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                    int choiceMenu = Convert.ToInt32(Console.ReadLine());
 
                     if (choiceMenu == 0)
                     {
@@ -83,11 +85,11 @@ class MainProgram
                     {
 
                         menuCalculator();
-                        int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                        int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine()); 
 
                         int j = 1;
 
-                        // Laço de Repetição - Menu Calculadora
+                        //---------------------- Laço de Repetição: Menu Calculadora --------------------------------------
 
                         while (j != 0)
                         {
@@ -99,12 +101,13 @@ class MainProgram
                             }
                             else if (choiceCalculatorOperations == 1)
                             {
+                                //------------------------- Método de Adição ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Double
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Double
 
                                 calculator.Addition(firstValueNumber, secondValueNumber); // Método para Adição
 
@@ -138,28 +141,30 @@ class MainProgram
                                     break;
 
                                 }
+                                //------------------------- Fim do Método de Adição ---------------------------------------
 
                             }
                             else if (choiceCalculatorOperations == 2)
                             {
+                                //------------------------- Método de Subtração ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
-                                calculator.Subtraction(firstValueNumber, secondValueNumber); // Método para Substituição
+                                calculator.Subtraction(firstValueNumber, secondValueNumber); 
 
                                 Console.WriteLine($"\nA SUBTRAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); // Inserir o Valor na Lista
-                                calculator.calculatorList.Add(secondValueNumber); // Inserir o Valor na Lista
+                                calculator.calculatorList.Add(firstValueNumber); 
+                                calculator.calculatorList.Add(secondValueNumber); 
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
 
                                 if (choiceContinue == 1)
                                 {
@@ -181,28 +186,30 @@ class MainProgram
                                     break;
 
                                 }
+                                //------------------------- Fim do Método de Subtração ---------------------------------------
 
                             }
                             else if (choiceCalculatorOperations == 3)
                             {
+                                //------------------------- Método de Multiplicação ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
-                                calculator.Multiplication(firstValueNumber, secondValueNumber); // Método para Multiplicação
+                                calculator.Multiplication(firstValueNumber, secondValueNumber); 
 
                                 Console.WriteLine($"\nA MULTIPLICAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); // Inserir o Valor na Lista
-                                calculator.calculatorList.Add(secondValueNumber); // Inserir o Valor na Lista
+                                calculator.calculatorList.Add(firstValueNumber); 
+                                calculator.calculatorList.Add(secondValueNumber); 
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
 
                                 if (choiceContinue == 1)
                                 {
@@ -224,28 +231,30 @@ class MainProgram
                                     break;
 
                                 }
+                                //------------------------- Fim do Método de Multiplicação ---------------------------------------
 
                             }
                             else if (choiceCalculatorOperations == 4)
                             {
+                                //------------------------- Método de Divisão ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Int
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
 
-                                calculator.Division(firstValueNumber, secondValueNumber); // Método para Divisão
+                                calculator.Division(firstValueNumber, secondValueNumber);
 
                                 Console.WriteLine($"\nA DIVISÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); // Inserir o Valor na Lista
-                                calculator.calculatorList.Add(secondValueNumber); // Inserir o Valor na Lista
+                                calculator.calculatorList.Add(firstValueNumber); 
+                                calculator.calculatorList.Add(secondValueNumber); 
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
 
                                 if (choiceContinue == 1)
                                 {
@@ -267,6 +276,7 @@ class MainProgram
                                     break;
 
                                 }
+                                //------------------------- Fim do Método de Adição ---------------------------------------
 
                             }
                             else
@@ -278,20 +288,19 @@ class MainProgram
 
                             }
                         }
-
-                        // Saída do Laço de Repetição - Menu Calculadora
+                        //---------------------- Fim do Laço de Repetição: Menu Calculadora ----------------------------------
 
                     }
                     else if (choiceMenu == 3)
                     {
 
                         menuList();
-                        int choiceList = Convert.ToInt32(Console.ReadLine()); // Converter String para Int
+                        int choiceList = Convert.ToInt32(Console.ReadLine()); 
 
                         int k = 1;
 
-                        // Laço de Repetição - Menu Lista
-
+                        //---------------------- Laço de Repetição: Menu Lista --------------------------------------
+                        
                         while (k != 0)
                         {
 
@@ -364,8 +373,7 @@ class MainProgram
                             }
 
                         }
-
-                        // Saída do Laço de Repetição - Menu Lista
+                        //---------------------- Fim do Laço de Repetição: Menu Lista ----------------------------------
 
                     }
                     else
@@ -375,8 +383,7 @@ class MainProgram
 
                     }
                 }
-
-                // Saída do Laço de Repetição - Menu Sistema
+                //---------------------- Fim do Laço de Repetição: Menu Sistema ----------------------------------
 
             }
         }

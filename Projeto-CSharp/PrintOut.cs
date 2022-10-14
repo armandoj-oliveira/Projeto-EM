@@ -1,7 +1,9 @@
 ﻿
 class PrintOut
 {
-    public void PrintRegistrationPerson() // Mensagem para Registro do Usuário
+
+    //------------------------- Mensagem para Registro do Usuário ---------------------------------------
+    public void PrintRegistrationPerson() 
     {
         Console.WriteLine("//-------------------------------------------------------------------------------//");
         Console.WriteLine("//---------------------- SEJA MUITO(A) BEM VINDO(A)! ----------------------------//");
@@ -9,7 +11,8 @@ class PrintOut
         Console.WriteLine("//-------------------------------------------------------------------------------//");
     }
 
-    public void printCheckNameError() // Mensagem Erro - Nome Invalido
+    //-------------------------  Mensagem Erro - Nome Invalido ---------------------------------------
+    public void printCheckNameError()
     {
 
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
@@ -18,7 +21,8 @@ class PrintOut
 
     }
 
-    public void printCheckAgeError() // Mensagem Erro - Idade Invalidada
+    //------------------------- Mensagem Erro - Idade Invalidada ---------------------------------------
+    public void printCheckAgeError()
     {
 
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
@@ -27,7 +31,8 @@ class PrintOut
 
     }
 
-    public void PrintInitialMenu() // Mensagem de Menu do Sistema
+    //------------------------- Mensagem de Menu do Sistema ---------------------------------------
+    public void PrintInitialMenu() 
     {
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//------------------------- BEM VINDO(A) DE NOVO(A)! ----------------------------//");
@@ -42,7 +47,8 @@ class PrintOut
         Console.Write("DIGITE UM NÚMERO: ");
     }
 
-    public void PrintMenuCalculator() //  Mensagem de Menun da Calculadora
+    //------------------------- Mensagem de Menun da Calculadora ---------------------------------------
+    public void PrintMenuCalculator()  
     {
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//---------------------------- MENU CALCULADORA! --------------------------------//");
@@ -58,7 +64,8 @@ class PrintOut
         Console.Write("DIGITE UM NÚMERO: ");
     }
 
-    public void PrintMenuList() // Mensagem de Menu da Lista
+    //------------------------- Mensagem de Menu da Lista ---------------------------------------
+    public void PrintMenuList()
     {
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//------------------- INFORMAÇÕES DE NÚMEROS JÀ DIGITADOS! ------------------------//");
@@ -76,7 +83,8 @@ class PrintOut
         Console.Write("DIGITE UM NÚMERO: ");
     }
 
-    public void PrintDataPerson(Person p) // Mensagem de Dados do Usuário
+    //------------------------- Mensagem de Dados do Usuário ---------------------------------------
+    public void PrintDataPerson(Person p)
     {
         Console.WriteLine("//-------------------------------------------------------------------------------//");
         Console.WriteLine("//---------------------------- DADOS DO USUÁRIO! --------------------------------//");
@@ -85,14 +93,16 @@ class PrintOut
         Console.WriteLine($"\n\tIDADE: {p.agePerson} anos");
     }
 
-    public void PrintMessageLater() // Mensagem de Despedida
+    //------------------------- Mensagem de Despedida ---------------------------------------
+    public void PrintMessageLater() 
     {
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//-------------------------- ATÉ OUTRA HORA! ------------------------------------//");
         Console.WriteLine("//-------------------------------------------------------------------------------//");
     }
 
-    public void PrintMessageError() // Mensagem de Error - Opção
+    //------------------------- Mensagem de Error - Opção ---------------------------------------
+    public void PrintMessageError()
     {
         Console.WriteLine("//-------------------------------------------------------------------------------//");
         Console.WriteLine("//--------------------------- OPÇÃO INVÁLIDA! -----------------------------------//");
