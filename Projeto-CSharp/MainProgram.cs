@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 class MainProgram
 {
@@ -305,10 +304,9 @@ class MainProgram
                             else if (choiceList == 1)
                             {
 
-                                Console.WriteLine($"\nOS NÚMEROS INSERIDOS NO SISTEMA SÂO: ");
-
-                                calculator.ListCaculator(); // Listar todos os itens da Lista
-
+                                calculator.ListCaculator(); // Verifica se tem itens na Lista. 
+                                                            // Se não tiver nada na Lista, imprime a mensagem que não contém nada
+                                                            // Se tiver algo na Lista, imprime na tela os valores
                                 break;
 
                             }
@@ -323,7 +321,6 @@ class MainProgram
                             else if (choiceList == 3)
                             {
 
-                                Console.WriteLine("\nA ORDEM CRESCENTE DA LISTA DE NÚMEROS É: ");
 
                                 calculator.ListGrowningNumber(); // Mostrar os itens da lista em ordem crescente
 
@@ -333,7 +330,6 @@ class MainProgram
                             else if (choiceList == 4)
                             {
 
-                                Console.WriteLine("\n A ORDEM DECRESCENTE DA LISTA DE NÚMEROS É: ");
 
                                 calculator.ListDecreasingNumber(); // Mostrar os itens da lista em ordem decrescente
 
@@ -354,8 +350,6 @@ class MainProgram
                             {
 
                                 calculator.ListRemoveItens(); // Remover todos os itens da Lista
-
-                                Console.WriteLine("LISTA ESVAZIDA COM SUCESSO!");
 
                                 break;
 

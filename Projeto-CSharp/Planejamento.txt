@@ -3,7 +3,7 @@
 RESUMO:
 
 Um estudante precisa de uma calculadora para fazer suas tarefas de matemática. Porém, por falta de uma o mesmo vai até uma papelaria
-conversa com o funcionário e ao adquirir a calculadora realiza os cálculos. A calcudora avançada consegue armazenar os valores primitivos
+e ao adquirir a calculadora realiza os cálculos. A calcudora avançada consegue armazenar os valores primitivos
 e fazer uma busca entre os mais procurados, ou, dos que estão dentre os parêmtros que o estudante esocolher.
 
 - Uso de VAR (possibilidade do sistema optar por qual tipo primitivo a variável seja); - OK
