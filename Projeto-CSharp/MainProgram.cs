@@ -17,7 +17,7 @@ class MainProgram
 
         //-------------------------- Criação de Delegates --------------------------------------
 
-        MenuSystem menuResgisterUser = new MenuSystem(print.PrintRegistrationPerson);
+        MenuSystem menuConfirmPerson = new MenuSystem(print.PrintConfirmPerson);
         MenuSystem checkName = new MenuSystem(print.printCheckNameError);
         MenuSystem checkAge = new MenuSystem(print.printCheckAgeError);
         MenuSystem menuSystem = new MenuSystem(print.PrintInitialMenu);
@@ -28,12 +28,12 @@ class MainProgram
 
         //----------------------------------------------------------------
 
-        menuResgisterUser(); // Mensagem de Resgistro da Pessoa
+        menuConfirmPerson(); // Mensagem de Resgistro da Pessoa
 
         Console.Write("\nINFORME SEU NOME: ");
 
         String name = Console.ReadLine();
-        person.namePerson = name;
+        person.PersonName(name);
 
         if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) // Indica se a expressão regular encontra uma correspondência na cadeia de caracteres de entrada.
         {                                         // Caso essa afirmativa seja verdadeira
@@ -47,7 +47,7 @@ class MainProgram
             Console.Write("\nINFORME SUA IDADE: ");
 
             int age = Convert.ToInt32(Console.ReadLine());
-            person.agePerson = age;
+            person.PersonAge(age);
 
             if (age < 1 || age > 110) // Verificar a Idade do Usuário é menor que 0 ou maior que 100
             {                         // Caso essa afirmativa seja verdadeira
@@ -60,6 +60,8 @@ class MainProgram
 
                 int i = 1;
 
+
+
                 //---------------------- Laço de Repetição: Menu Sistema --------------------------------------
 
                 while (i != 0)
@@ -71,6 +73,8 @@ class MainProgram
                     if (choiceMenu == 0)
                     {
 
+                        Console.Clear();
+
                         messageLater(); // Mensagem de Despedida
                         break;
 
@@ -78,11 +82,17 @@ class MainProgram
                     else if (choiceMenu == 1)
                     {
 
-                        print.PrintDataPerson(person); // Mensagem de Dados do Usuário
+                        Console.Clear();
+
+                        print.PrintDataPerson(); // Mensagem de Dados do Usuário
+                        Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonName(name)}");
+                        Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonAge(age)} ANOS");
 
                     }
                     else if (choiceMenu == 2)
                     {
+
+                        Console.Clear();
 
                         menuCalculator();
                         int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine()); 
@@ -96,30 +106,35 @@ class MainProgram
                             if (choiceCalculatorOperations == 0)
                             {
 
+                                messageError();
+
                                 break; // Voltar para o Menu do Sistema
 
                             }
                             else if (choiceCalculatorOperations == 1)
                             {
+
+                                Console.Clear();
+
                                 //------------------------- Método de Adição ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Double
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); // Converter String para Double
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
 
-                                calculator.Addition(firstValueNumber, secondValueNumber); // Método para Adição
+                                calculator.Addition(firstValueNumber, secondValueNumber); 
 
                                 Console.WriteLine($"\nA ADIÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); // Inserir o Valor na Lista
-                                calculator.calculatorList.Add(secondValueNumber); // Inserir o Valor na Lista
+                                calculator.calculatorList.Add(firstValueNumber); 
+                                calculator.calculatorList.Add(secondValueNumber); 
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); // Inserir o Valor na Lista
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
 
                                 if (choiceContinue == 1)
                                 {
@@ -146,6 +161,9 @@ class MainProgram
                             }
                             else if (choiceCalculatorOperations == 2)
                             {
+
+                                Console.Clear();
+
                                 //------------------------- Método de Subtração ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
@@ -191,6 +209,9 @@ class MainProgram
                             }
                             else if (choiceCalculatorOperations == 3)
                             {
+
+                                Console.Clear();
+
                                 //------------------------- Método de Multiplicação ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
@@ -236,6 +257,9 @@ class MainProgram
                             }
                             else if (choiceCalculatorOperations == 4)
                             {
+
+                                Console.Clear();
+
                                 //------------------------- Método de Divisão ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
@@ -294,6 +318,8 @@ class MainProgram
                     else if (choiceMenu == 3)
                     {
 
+                        Console.Clear();
+
                         menuList();
                         int choiceList = Convert.ToInt32(Console.ReadLine()); 
 
@@ -312,6 +338,7 @@ class MainProgram
                             }
                             else if (choiceList == 1)
                             {
+
 
                                 calculator.ListCaculator(); // Verifica se tem itens na Lista. 
                                                             // Se não tiver nada na Lista, imprime a mensagem que não contém nada
@@ -378,14 +405,20 @@ class MainProgram
                     }
                     else
                     {
-                        Console.WriteLine(calculator.calculatorList);
+
+                        Console.Clear();
+
                         messageError();
 
                     }
                 }
+
                 //---------------------- Fim do Laço de Repetição: Menu Sistema ----------------------------------
 
             }
         }
+
+     //---------------------------- Fim do Sistema -----------------------------------
+
     }
 }
