@@ -1,7 +1,4 @@
-﻿using System.Collections;
-
-class Person
-{
+﻿class Person {
     private String Name { get; set; }
     private short Age { get; set; }
 
