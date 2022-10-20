@@ -67,22 +67,16 @@ class MainProgram {
 
                     if (choiceMenu == 0) {
 
-                        Console.Clear();
-
                         messageLater(); // Mensagem de Despedida
                         break;
 
                     } else if (choiceMenu == 1) {
-
-                        Console.Clear();
 
                         print.PrintDataPerson(); // Mensagem de Dados do Usuário
                         Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonName(name)}");
                         Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonAge(age)} ANOS");
 
                     } else if (choiceMenu == 2) {
-
-                        Console.Clear();
 
                         menuCalculator();
                         int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine());
@@ -99,8 +93,6 @@ class MainProgram {
                                 break; // Voltar para o Menu do Sistema
 
                             } else if (choiceCalculatorOperations == 1) {
-
-                                Console.Clear();
 
                                 //------------------------- Método de Adição ---------------------------------------
 
@@ -141,8 +133,6 @@ class MainProgram {
 
                             } else if (choiceCalculatorOperations == 2) {
 
-                                Console.Clear();
-
                                 //------------------------- Método de Subtração ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
@@ -182,8 +172,6 @@ class MainProgram {
 
                             } else if (choiceCalculatorOperations == 3) {
 
-                                Console.Clear();
-
                                 //------------------------- Método de Multiplicação ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
@@ -222,8 +210,6 @@ class MainProgram {
                                 //------------------------- Fim do Método de Multiplicação ---------------------------------------
 
                             } else if (choiceCalculatorOperations == 4) {
-
-                                Console.Clear();
 
                                 //------------------------- Método de Divisão ---------------------------------------
 
@@ -273,8 +259,6 @@ class MainProgram {
                         //---------------------- Fim do Laço de Repetição: Menu Calculadora ----------------------------------
 
                     } else if (choiceMenu == 3) {
-
-                        Console.Clear();
 
                         menuList();
                         int choiceList = Convert.ToInt32(Console.ReadLine());
