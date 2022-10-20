@@ -1,20 +1,12 @@
-﻿class Person
+﻿using System.Collections;
+
+class Person
 {
     private String Name { get; set; }
-    private int Age { get; set; }
+    private short Age { get; set; }
 
-    public String PersonName(string name)
-    {
+    public String PersonName(string name) => this.Name = name;
 
-        return this.Name = name;
-
-    }
-
-    public int PersonAge(int age)
-    {
-
-        return this.Age = age;
-
-    }
+    public int PersonAge(short age) => this.Age = age;
 
 }

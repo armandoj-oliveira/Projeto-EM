@@ -14,7 +14,7 @@ class PrintOut
     }
 
     //-------------------------  Mensagem Erro - Nome Invalido ---------------------------------------
-    public void printCheckNameError()
+    public void PrintCheckNameError()
     {
 
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
@@ -24,13 +24,22 @@ class PrintOut
     }
 
     //------------------------- Mensagem Erro - Idade Invalidada ---------------------------------------
-    public void printCheckAgeError()
+    public void PrintCheckAgeError()
     {
 
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//--------------------------- IDADE INVÁLIDA! -----------------------------------//");
         Console.WriteLine("//-------------------------------------------------------------------------------//");
 
+    }
+
+    public void PrintChechAgeAndNameError()
+    {
+
+        Console.WriteLine("\n//-------------------------------------------------------------------------------//");
+        Console.WriteLine("//------------------------ NOME E/OU IDADE INVÁLIDO(S)! -------------------------//");
+        Console.WriteLine("//-------------------------------------------------------------------------------//");
+        
     }
 
     //------------------------- Mensagem de Menu do Sistema ---------------------------------------

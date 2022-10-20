@@ -6,26 +6,16 @@
 
     public List<double> calculatorList = new List<double>(); // criação da lista para armazenar os dados inseridos pelo usuário
 
-    public void Addition(double firstNum, double secondNum)
-    {
-        this.Result = firstNum + secondNum;
-    }
+    public void Addition(double firstNum, double secondNum) => this.Result = firstNum + secondNum;
 
-    public void Subtraction(double firstNum, double secondNum)
-    {
-        this.Result = firstNum - secondNum;
-    }
+    public void Subtraction(double firstNum, double secondNum) => this.Result = firstNum + secondNum;
 
-    public void Multiplication(double firstNum, double secondNum)
-    {
-        this.Result = firstNum * secondNum;
-    }
-    public void Division(double firstNum, double secondNum)
-    {
-        this.Result = firstNum / secondNum;
-    }
+    public void Multiplication(double firstNum, double secondNum) => this.Result = firstNum * secondNum;
+
+    public void Division(double firstNum, double secondNum) => this.Result = firstNum / secondNum;
 
     //------------------------- Imprimir Números da Lista ---------------------------------------
+
     public void ListCaculator()
     {
 
@@ -121,7 +111,7 @@
 
             var numberDuplicate = calculatorList.GroupBy(x => x) // uso de LinQ com Expressão Lambda
                          .Where(g => g.Count() > 1)
-                         .Select(x => new { ELEMENTO = x.Key, REPETE = x.Count() })
+                         .Select(x => new {ELEMENTO = x.Key, REPETE = x.Count() })
                          .ToList();
 
             Console.WriteLine(String.Join(", ", numberDuplicate));

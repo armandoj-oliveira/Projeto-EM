@@ -1,15 +1,13 @@
 ﻿using System.Text.RegularExpressions;
 
-class MainProgram
-{
+class MainProgram {
 
     public delegate void MenuSystem();
 
-    static void Main(string[] args)
-    {
+    static void Main(string[] args) {
 
         //-------------------------- Criação de Objetos --------------------------------------
-        
+
         Calulator calculator = new Calulator();
         Person person = new Person();
         PrintOut print = new PrintOut();
@@ -18,8 +16,8 @@ class MainProgram
         //-------------------------- Criação de Delegates --------------------------------------
 
         MenuSystem menuConfirmPerson = new MenuSystem(print.PrintConfirmPerson);
-        MenuSystem checkName = new MenuSystem(print.printCheckNameError);
-        MenuSystem checkAge = new MenuSystem(print.printCheckAgeError);
+        MenuSystem checkName = new MenuSystem(print.PrintCheckNameError);
+        MenuSystem checkAge = new MenuSystem(print.PrintCheckAgeError);
         MenuSystem menuSystem = new MenuSystem(print.PrintInitialMenu);
         MenuSystem menuCalculator = new MenuSystem(print.PrintMenuCalculator);
         MenuSystem menuList = new MenuSystem(print.PrintMenuList);
@@ -40,13 +38,12 @@ class MainProgram
 
             checkName(); // Imprime Mensagem de Erro - Nome Inválido
 
-        }
-        else // Caso a afirmativa for falsa, o algoritmo continua
-        {
+        } else // Caso a afirmativa for falsa, o algoritmo continua
+          {
 
             Console.Write("\nINFORME SUA IDADE: ");
 
-            int age = Convert.ToInt32(Console.ReadLine());
+            short age = Convert.ToInt16(Console.ReadLine());
             person.PersonAge(age);
 
             if (age < 1 || age > 110) // Verificar a Idade do Usuário é menor que 0 ou maior que 100
@@ -54,9 +51,8 @@ class MainProgram
 
                 checkAge(); // Imprime Mensagem de Erro - Idade Inválida
 
-            }
-            else   // Caso a afirmativa for falsa, o algoritmo continua
-            {
+            } else   // Caso a afirmativa for falsa, o algoritmo continua
+              {
 
                 int i = 1;
 
@@ -64,23 +60,19 @@ class MainProgram
 
                 //---------------------- Laço de Repetição: Menu Sistema --------------------------------------
 
-                while (i != 0)
-                {
+                while (i != 0) {
 
                     menuSystem();
                     int choiceMenu = Convert.ToInt32(Console.ReadLine());
 
-                    if (choiceMenu == 0)
-                    {
+                    if (choiceMenu == 0) {
 
                         Console.Clear();
 
                         messageLater(); // Mensagem de Despedida
                         break;
 
-                    }
-                    else if (choiceMenu == 1)
-                    {
+                    } else if (choiceMenu == 1) {
 
                         Console.Clear();
 
@@ -88,68 +80,57 @@ class MainProgram
                         Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonName(name)}");
                         Console.WriteLine($"\tNOME DO USUÁRIO: {person.PersonAge(age)} ANOS");
 
-                    }
-                    else if (choiceMenu == 2)
-                    {
+                    } else if (choiceMenu == 2) {
 
                         Console.Clear();
 
                         menuCalculator();
-                        int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine()); 
+                        int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine());
 
                         int j = 1;
 
                         //---------------------- Laço de Repetição: Menu Calculadora --------------------------------------
 
-                        while (j != 0)
-                        {
-                            if (choiceCalculatorOperations == 0)
-                            {
+                        while (j != 0) {
+                            if (choiceCalculatorOperations == 0) {
 
                                 messageError();
 
                                 break; // Voltar para o Menu do Sistema
 
-                            }
-                            else if (choiceCalculatorOperations == 1)
-                            {
+                            } else if (choiceCalculatorOperations == 1) {
 
                                 Console.Clear();
 
                                 //------------------------- Método de Adição ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
 
-                                calculator.Addition(firstValueNumber, secondValueNumber); 
+                                calculator.Addition(firstValueNumber, secondValueNumber);
 
                                 Console.WriteLine($"\nA ADIÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); 
-                                calculator.calculatorList.Add(secondValueNumber); 
+                                calculator.calculatorList.Add(firstValueNumber);
+                                calculator.calculatorList.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
 
-                                if (choiceContinue == 1)
-                                {
+                                if (choiceContinue == 1) {
 
                                     continue;
 
-                                }
-                                else if (choiceContinue == 2)
-                                {
+                                } else if (choiceContinue == 2) {
 
                                     break;
 
-                                }
-                                else
-                                {
+                                } else {
 
                                     messageError(); // Mensagem de Erro - Opção Inválida
 
@@ -158,46 +139,39 @@ class MainProgram
                                 }
                                 //------------------------- Fim do Método de Adição ---------------------------------------
 
-                            }
-                            else if (choiceCalculatorOperations == 2)
-                            {
+                            } else if (choiceCalculatorOperations == 2) {
 
                                 Console.Clear();
 
                                 //------------------------- Método de Subtração ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
 
-                                calculator.Subtraction(firstValueNumber, secondValueNumber); 
+                                calculator.Subtraction(firstValueNumber, secondValueNumber);
 
                                 Console.WriteLine($"\nA SUBTRAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); 
-                                calculator.calculatorList.Add(secondValueNumber); 
+                                calculator.calculatorList.Add(firstValueNumber);
+                                calculator.calculatorList.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
 
-                                if (choiceContinue == 1)
-                                {
+                                if (choiceContinue == 1) {
 
                                     continue;
 
-                                }
-                                else if (choiceContinue == 2)
-                                {
+                                } else if (choiceContinue == 2) {
 
                                     break;
 
-                                }
-                                else
-                                {
+                                } else {
 
                                     messageError(); // Mensagem de Erro - Opção Inválida
 
@@ -206,46 +180,39 @@ class MainProgram
                                 }
                                 //------------------------- Fim do Método de Subtração ---------------------------------------
 
-                            }
-                            else if (choiceCalculatorOperations == 3)
-                            {
+                            } else if (choiceCalculatorOperations == 3) {
 
                                 Console.Clear();
 
                                 //------------------------- Método de Multiplicação ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine()); 
+                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
 
-                                calculator.Multiplication(firstValueNumber, secondValueNumber); 
+                                calculator.Multiplication(firstValueNumber, secondValueNumber);
 
                                 Console.WriteLine($"\nA MULTIPLICAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); 
-                                calculator.calculatorList.Add(secondValueNumber); 
+                                calculator.calculatorList.Add(firstValueNumber);
+                                calculator.calculatorList.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine()); 
+                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
 
-                                if (choiceContinue == 1)
-                                {
+                                if (choiceContinue == 1) {
 
                                     continue;
 
-                                }
-                                else if (choiceContinue == 2)
-                                {
+                                } else if (choiceContinue == 2) {
 
                                     break;
 
-                                }
-                                else
-                                {
+                                } else {
 
                                     messageError(); // Mensagem de Erro - Opção Inválida
 
@@ -254,9 +221,7 @@ class MainProgram
                                 }
                                 //------------------------- Fim do Método de Multiplicação ---------------------------------------
 
-                            }
-                            else if (choiceCalculatorOperations == 4)
-                            {
+                            } else if (choiceCalculatorOperations == 4) {
 
                                 Console.Clear();
 
@@ -272,28 +237,23 @@ class MainProgram
 
                                 Console.WriteLine($"\nA DIVISÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber); 
-                                calculator.calculatorList.Add(secondValueNumber); 
+                                calculator.calculatorList.Add(firstValueNumber);
+                                calculator.calculatorList.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
                                 int choiceContinue = Convert.ToInt32(Console.ReadLine());
 
-                                if (choiceContinue == 1)
-                                {
+                                if (choiceContinue == 1) {
 
                                     continue;
 
-                                }
-                                else if (choiceContinue == 2)
-                                {
+                                } else if (choiceContinue == 2) {
 
                                     break;
 
-                                }
-                                else
-                                {
+                                } else {
 
                                     messageError(); // Mensagem de Erro - Opção Inválida
 
@@ -302,9 +262,7 @@ class MainProgram
                                 }
                                 //------------------------- Fim do Método de Adição ---------------------------------------
 
-                            }
-                            else
-                            {
+                            } else {
 
                                 messageError(); // Mensagem de Erro - Opção Inválida
 
@@ -314,30 +272,24 @@ class MainProgram
                         }
                         //---------------------- Fim do Laço de Repetição: Menu Calculadora ----------------------------------
 
-                    }
-                    else if (choiceMenu == 3)
-                    {
+                    } else if (choiceMenu == 3) {
 
                         Console.Clear();
 
                         menuList();
-                        int choiceList = Convert.ToInt32(Console.ReadLine()); 
+                        int choiceList = Convert.ToInt32(Console.ReadLine());
 
                         int k = 1;
 
                         //---------------------- Laço de Repetição: Menu Lista --------------------------------------
-                        
-                        while (k != 0)
-                        {
 
-                            if (choiceList == 0)
-                            {
+                        while (k != 0) {
+
+                            if (choiceList == 0) {
 
                                 break;
 
-                            }
-                            else if (choiceList == 1)
-                            {
+                            } else if (choiceList == 1) {
 
 
                                 calculator.ListCaculator(); // Verifica se tem itens na Lista. 
@@ -345,26 +297,20 @@ class MainProgram
                                                             // Se tiver algo na Lista, imprime na tela os valores
                                 break;
 
-                            }
-                            else if (choiceList == 2)
-                            {
+                            } else if (choiceList == 2) {
 
                                 calculator.ListCount(); // Contar quantos itens tem na Lista
 
                                 break;
 
-                            }
-                            else if (choiceList == 3)
-                            {
+                            } else if (choiceList == 3) {
 
 
                                 calculator.ListGrowningNumber(); // Mostrar os itens da lista em ordem crescente
 
                                 break;
 
-                            }
-                            else if (choiceList == 4)
-                            {
+                            } else if (choiceList == 4) {
 
 
                                 calculator.ListDecreasingNumber(); // Mostrar os itens da lista em ordem decrescente
@@ -372,26 +318,20 @@ class MainProgram
                                 break;
 
 
-                            }
-                            else if (choiceList == 5)
-                            {
+                            } else if (choiceList == 5) {
 
                                 calculator.ListDuplicate(); // Mostrar os itens duplicados na Lista
 
                                 break;
 
 
-                            }
-                            else if (choiceList == 6)
-                            {
+                            } else if (choiceList == 6) {
 
                                 calculator.ListRemoveItens(); // Remover todos os itens da Lista
 
                                 break;
 
-                            }
-                            else
-                            {
+                            } else {
 
                                 print.PrintMessageError();  // Mensagem de Erro - Opção Inválida
 
@@ -402,9 +342,7 @@ class MainProgram
                         }
                         //---------------------- Fim do Laço de Repetição: Menu Lista ----------------------------------
 
-                    }
-                    else
-                    {
+                    } else {
 
                         Console.Clear();
 
@@ -418,7 +356,7 @@ class MainProgram
             }
         }
 
-     //---------------------------- Fim do Sistema -----------------------------------
+        //---------------------------- Fim do Sistema -----------------------------------
 
     }
 }
