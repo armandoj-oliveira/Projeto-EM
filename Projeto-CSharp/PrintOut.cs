@@ -1,7 +1,7 @@
 ﻿class PrintOut {
 
     //------------------------- Mensagem para Registro do Usuário ---------------------------------------
-    public void PrintConfirmPerson() {
+    public void PrintPerson() {
 
         Console.WriteLine("//-------------------------------------------------------------------------------//");
         Console.WriteLine("//---------------------- SEJA MUITO(A) BEM VINDO(A)! ----------------------------//");

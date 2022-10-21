@@ -1,9 +1,9 @@
 ﻿class Person {
-    private String Name { get; set; }
-    private short Age { get; set; }
+    private string Name { get; set; }
+    private int Age { get; set; }
 
-    public String PersonName(string name) => this.Name = name;
+    public string PersonName(string name) => this.Name = name; 
 
-    public int PersonAge(short age) => this.Age = age;
+    public int PersonAge(int age) => this.Age = age;
 
 }

@@ -12,12 +12,11 @@ class MainProgram {
         Person person = new Person();
         PrintOut print = new PrintOut();
 
-
         //-------------------------- Criação de Delegates --------------------------------------
 
-        MenuSystem menuConfirmPerson = new MenuSystem(print.PrintConfirmPerson);
-        MenuSystem checkName = new MenuSystem(print.PrintCheckNameError);
-        MenuSystem checkAge = new MenuSystem(print.PrintCheckAgeError);
+        MenuSystem menuPerson = new MenuSystem(print.PrintPerson);
+        MenuSystem checkNameError = new MenuSystem(print.PrintCheckNameError);
+        MenuSystem checkAgeError = new MenuSystem(print.PrintCheckAgeError);
         MenuSystem menuSystem = new MenuSystem(print.PrintInitialMenu);
         MenuSystem menuCalculator = new MenuSystem(print.PrintMenuCalculator);
         MenuSystem menuList = new MenuSystem(print.PrintMenuList);
@@ -26,30 +25,29 @@ class MainProgram {
 
         //----------------------------------------------------------------
 
-        menuConfirmPerson(); // Mensagem de Resgistro da Pessoa
+        menuPerson(); // Mensagem de Resgistro da Pessoa
 
         Console.Write("\nINFORME SEU NOME: ");
-
-        String name = Console.ReadLine();
+        string name = Console.ReadLine();
         person.PersonName(name);
 
         if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) // Indica se a expressão regular encontra uma correspondência na cadeia de caracteres de entrada.
-        {                                         // Caso essa afirmativa seja verdadeira
+        {                                         // Caso essa afirmativa seja falsa
 
-            checkName(); // Imprime Mensagem de Erro - Nome Inválido
+            checkNameError(); // Imprime Mensagem de Erro - Nome Inválido
 
-        } else // Caso a afirmativa for falsa, o algoritmo continua
+        } else // Caso a afirmativa for verdadeira, o algoritmo continua
           {
 
             Console.Write("\nINFORME SUA IDADE: ");
-
-            short age = Convert.ToInt16(Console.ReadLine());
+            byte.TryParse(Console.ReadLine(), out byte choiceAge); // out - argumentos sejam passados por referência
+            int age = choiceAge; // Conversão Implícita
             person.PersonAge(age);
 
             if (age < 1 || age > 110) // Verificar a Idade do Usuário é menor que 0 ou maior que 100
             {                         // Caso essa afirmativa seja verdadeira
 
-                checkAge(); // Imprime Mensagem de Erro - Idade Inválida
+                checkAgeError(); // Imprime Mensagem de Erro - Idade Inválida
 
             } else   // Caso a afirmativa for falsa, o algoritmo continua
               {
@@ -57,13 +55,12 @@ class MainProgram {
                 int i = 1;
 
 
-
                 //---------------------- Laço de Repetição: Menu Sistema --------------------------------------
 
                 while (i != 0) {
 
                     menuSystem();
-                    int choiceMenu = Convert.ToInt32(Console.ReadLine());
+                    int.TryParse(Console.ReadLine(), out int choiceMenu); 
 
                     if (choiceMenu == 0) {
 
@@ -79,7 +76,7 @@ class MainProgram {
                     } else if (choiceMenu == 2) {
 
                         menuCalculator();
-                        int choiceCalculatorOperations = Convert.ToInt32(Console.ReadLine());
+                        int.TryParse(Console.ReadLine(), out int choiceCalculatorOperations);
 
                         int j = 1;
 
@@ -97,10 +94,20 @@ class MainProgram {
                                 //------------------------- Método de Adição ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double firstValueNumber);
+
+                                /*
+                                 * Conversão Explícita - Possiblidade de Perda de Memória
+                                 * 
+                                 * Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
+                                 * double.TryParse(Console.ReadLine(), double out firstNumber);
+                                 * 
+                                 * int firstValueNumber = (int) firstNumber;
+                                 * 
+                                 */
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double secondValueNumber);
 
                                 calculator.Addition(firstValueNumber, secondValueNumber);
 
@@ -112,7 +119,7 @@ class MainProgram {
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
+                                int.TryParse(Console.ReadLine(), out int choiceContinue);
 
                                 if (choiceContinue == 1) {
 
@@ -136,10 +143,10 @@ class MainProgram {
                                 //------------------------- Método de Subtração ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double firstValueNumber);
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double secondValueNumber);
 
                                 calculator.Subtraction(firstValueNumber, secondValueNumber);
 
@@ -151,7 +158,7 @@ class MainProgram {
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
+                                int.TryParse(Console.ReadLine(), out int choiceContinue);
 
                                 if (choiceContinue == 1) {
 
@@ -175,10 +182,10 @@ class MainProgram {
                                 //------------------------- Método de Multiplicação ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double firstValueNumber);
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double secondValueNumber);
 
                                 calculator.Multiplication(firstValueNumber, secondValueNumber);
 
@@ -190,7 +197,7 @@ class MainProgram {
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
+                                int.TryParse(Console.ReadLine(), out int choiceContinue);
 
                                 if (choiceContinue == 1) {
 
@@ -214,10 +221,10 @@ class MainProgram {
                                 //------------------------- Método de Divisão ---------------------------------------
 
                                 Console.Write("\nINFORME O PRIMEIRO NÚMERO: ");
-                                double firstValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double firstValueNumber);
 
                                 Console.Write("\nINFORME O SEGUNDO NÚMERO: ");
-                                double secondValueNumber = Convert.ToDouble(Console.ReadLine());
+                                double.TryParse(Console.ReadLine(), out double secondValueNumber);
 
                                 calculator.Division(firstValueNumber, secondValueNumber);
 
@@ -229,7 +236,7 @@ class MainProgram {
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
 
-                                int choiceContinue = Convert.ToInt32(Console.ReadLine());
+                                int.TryParse(Console.ReadLine(), out int choiceContinue);
 
                                 if (choiceContinue == 1) {
 
@@ -246,7 +253,7 @@ class MainProgram {
                                     break;
 
                                 }
-                                //------------------------- Fim do Método de Adição ---------------------------------------
+                                //------------------------- Fim do Método de Divisão ---------------------------------------
 
                             } else {
 
@@ -261,7 +268,7 @@ class MainProgram {
                     } else if (choiceMenu == 3) {
 
                         menuList();
-                        int choiceList = Convert.ToInt32(Console.ReadLine());
+                        int.TryParse(Console.ReadLine(), out int choiceList);
 
                         int k = 1;
 
@@ -283,35 +290,35 @@ class MainProgram {
 
                             } else if (choiceList == 2) {
 
-                                calculator.ListCount(); // Contar quantos itens tem na Lista
+                                calculator.ListCalculatorCount(); // Contar quantos itens tem na Lista
 
                                 break;
 
                             } else if (choiceList == 3) {
 
 
-                                calculator.ListGrowningNumber(); // Mostrar os itens da lista em ordem crescente
+                                calculator.ListCalculatorGrowning(); // Mostrar os itens da lista em ordem crescente
 
                                 break;
 
                             } else if (choiceList == 4) {
 
 
-                                calculator.ListDecreasingNumber(); // Mostrar os itens da lista em ordem decrescente
+                                calculator.ListCalculatorDecreasing(); // Mostrar os itens da lista em ordem decrescente
 
                                 break;
 
 
                             } else if (choiceList == 5) {
 
-                                calculator.ListDuplicate(); // Mostrar os itens duplicados na Lista
+                                calculator.ListCalculatorDuplicate(); // Mostrar os itens duplicados na Lista
 
                                 break;
 
 
                             } else if (choiceList == 6) {
 
-                                calculator.ListRemoveItens(); // Remover todos os itens da Lista
+                                calculator.ListCalculatorRemove(); // Remover todos os itens da Lista
 
                                 break;
 

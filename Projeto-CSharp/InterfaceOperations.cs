@@ -4,6 +4,4 @@
     void Multiplication(double firstNum, double secondNum);
     void Division(double firstNum, double secondNum);
 
-    double Result { get; set; }
-
 }

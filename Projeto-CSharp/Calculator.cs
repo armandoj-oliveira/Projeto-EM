@@ -1,8 +1,8 @@
 ﻿class Calulator : IOperations // os métodos da interface são herdados pela classe
 {
-    public double Result { get; set; }
-    public double firstNum;
-    public double secondNum;
+    public double Result;
+    public double FirstNum;
+    public double SecondNum;
 
     public List<double> calculatorList = new List<double>(); // criação da lista para armazenar os dados inseridos pelo usuário
 
@@ -20,32 +20,32 @@
 
         if (calculatorList.Count == 0) {
 
-            Console.WriteLine("NÃO EXISTE NENHUM NÚMERO NA LISTA!");
+            Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
 
             Console.WriteLine($"\nOS NÚMEROS INSERIDOS NO SISTEMA SÂO: ");
 
             foreach (double numbers in calculatorList) {
-                Console.WriteLine(numbers);
+                Console.WriteLine("\t{ " + numbers + " }");
             }
 
         }
     }
 
     //------------------------- Imprimir a quantidade de Números na Lista ---------------------------------------
-    public void ListCount() {
+    public void ListCalculatorCount() {
 
         Console.WriteLine($"EXISTEM {calculatorList.Count} NÚMEROS NA LISTA!");
 
     }
 
     //------------------------- Imprimir em ordem crescente a Lista ---------------------------------------
-    public void ListGrowningNumber() {
+    public void ListCalculatorGrowning() {
 
         if (calculatorList.Count == 0) {
 
-            Console.WriteLine("NÃO EXISTE NENHUM NÚMERO NA LISTA!");
+            Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
 
@@ -53,19 +53,19 @@
 
             Console.WriteLine("\nA ORDEM CRESCENTE DA LISTA DE NÚMEROS É: ");
 
-            foreach (double number in calculatorList) {
-                Console.WriteLine("\t{ " + number + " }");
+            foreach (double numbers in calculatorList) {
+                Console.WriteLine("\t{ " + numbers + " }");
             }
 
         }
     }
 
     //------------------------- Imprimir em ordem decrescente a Lista ---------------------------------------
-    public void ListDecreasingNumber() {
+    public void ListCalculatorDecreasing() {
 
         if (calculatorList.Count == 0) {
 
-            Console.WriteLine("NÃO EXISTE NENHUM NÚMERO NA LISTA!");
+            Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
             calculatorList.Sort();
@@ -73,15 +73,15 @@
 
             Console.WriteLine("\n A ORDEM DECRESCENTE DA LISTA DE NÚMEROS É: ");
 
-            foreach (double number in calculatorList) {
-                Console.WriteLine("\t{ " + number + " }");
+            foreach (double numbers in calculatorList) {
+                Console.WriteLine("\t{ " + numbers + " }");
             }
         }
 
     }
 
     //------------------------- Imprimir Itens Duplicado na Lista ---------------------------------------
-    public void ListDuplicate() {
+    public void ListCalculatorDuplicate() {
 
         if (calculatorList.Count == 0) {
 
@@ -100,12 +100,11 @@
     }
 
     //------------------------- Remoção do Itens da Lista ---------------------------------------
-    public void ListRemoveItens() {
+    public void ListCalculatorRemove() {
 
         calculatorList.Clear();
 
-
-        Console.WriteLine("LISTA ESVAZIDA COM SUCESSO!");
+        Console.WriteLine("\nLISTA ESVAZIDA COM SUCESSO!");
 
     }
 
