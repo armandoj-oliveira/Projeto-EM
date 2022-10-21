@@ -7,13 +7,17 @@ class MainProgram {
 
     static void Main(string[] args) {
 
+        //---------------------------- Lista Genérica ----------------------------------------
+
+        List<double> listNumbers = new List<double>();
+
         //-------------------------- Criação de Objetos --------------------------------------
 
-        Calulator calculator = new Calulator();
+        Calculator calculator = new Calculator();
         Person person = new Person();
         PrintOut print = new PrintOut();
 
-        //-------------------------- Criação de Delegates --------------------------------------
+        //-------------------------- Criação de Delegates ------------------------------------
 
         MenuSystem menuPerson = new MenuSystem(print.PrintPerson);
         MenuSystem checkNameError = new MenuSystem(print.PrintCheckNameError);
@@ -61,7 +65,7 @@ class MainProgram {
                 while (i != 0) {
 
                     menuSystem();
-                    int.TryParse(Console.ReadLine(), out int choiceMenu); 
+                    int.TryParse(Console.ReadLine(), out int choiceMenu);
 
                     if (choiceMenu == 0) {
 
@@ -84,6 +88,7 @@ class MainProgram {
                         //---------------------- Laço de Repetição: Menu Calculadora --------------------------------------
 
                         while (j != 0) {
+
                             if (choiceCalculatorOperations == 0) {
 
                                 messageError();
@@ -114,8 +119,8 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA ADIÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber);
-                                calculator.calculatorList.Add(secondValueNumber);
+                                listNumbers.Add(firstValueNumber);
+                                listNumbers.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -153,8 +158,8 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA SUBTRAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber);
-                                calculator.calculatorList.Add(secondValueNumber);
+                                listNumbers.Add(firstValueNumber);
+                                listNumbers.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -192,8 +197,8 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA MULTIPLICAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber);
-                                calculator.calculatorList.Add(secondValueNumber);
+                                listNumbers.Add(firstValueNumber);
+                                listNumbers.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -231,8 +236,8 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA DIVISÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                calculator.calculatorList.Add(firstValueNumber);
-                                calculator.calculatorList.Add(secondValueNumber);
+                                listNumbers.Add(firstValueNumber);
+                                listNumbers.Add(secondValueNumber);
 
                                 Console.WriteLine("\n DESEJA CONTINUAR? ");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -283,45 +288,117 @@ class MainProgram {
 
                             } else if (choiceList == 1) {
 
+                                //----------------------------- Imprimir Números da Lista -----------------------------------
 
-                                calculator.ListCaculator(); // Verifica se tem itens na Lista. 
-                                                            // Se não tiver nada na Lista, imprime a mensagem que não contém nada
-                                                            // Se tiver algo na Lista, imprime na tela os valores
+                                if (listNumbers.Count == 0) {                                    // Verifica se tem itens na Lista. 
+                                                                                                 // Se não tiver nada na Lista, imprime a mensagem que não contém nada
+                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");   // Se tiver algo na Lista, imprime na tela os valores
+
+                                } else {
+
+                                    Console.WriteLine($"\nOS NÚMEROS INSERIDOS NO SISTEMA SÂO: ");
+
+                                    foreach (var itens in listNumbers) {
+                                        Console.WriteLine("\t{ " + itens + " }");
+                                    }
+
+                                }
+
                                 break;
+
+                                //---------------------------- Fim: Imprimir Números da Lista -------------------------------
 
                             } else if (choiceList == 2) {
 
-                                calculator.ListCalculatorCount(); // Contar quantos itens tem na Lista
+                                //----------------------- Imprimir a quantidade de Números na Lista -------------------------
+
+                                Console.WriteLine($"EXITEM {listNumbers.Count} ITENS NA LISTA!");
 
                                 break;
+
+                                //-------------------- Fim: Imprimir a quantidade de Números na Lista -----------------------
 
                             } else if (choiceList == 3) {
 
+                                //------------------------- Imprimir em ordem crescente a Lista -----------------------------
 
-                                calculator.ListCalculatorGrowning(); // Mostrar os itens da lista em ordem crescente
+                                if (listNumbers.Count == 0) {
+
+                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
+
+                                } else {
+
+                                    listNumbers.Sort();
+                                    Console.WriteLine("\nA ORDEM CRESCENTE DA LISTA DE NÚMEROS É: ");
+
+                                    foreach (var itens in listNumbers) {
+                                        Console.WriteLine("\t{ " + itens + " }");
+                                    }
+
+                                }
 
                                 break;
+
+                                //---------------------- Fim: Imprimir em ordem crescente a Lista ---------------------------
 
                             } else if (choiceList == 4) {
 
+                                //----------------------- Imprimir em ordem decrescente a Lista -----------------------------
 
-                                calculator.ListCalculatorDecreasing(); // Mostrar os itens da lista em ordem decrescente
+                                if (listNumbers.Count == 0) {
+
+                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
+
+                                } else {
+
+                                    listNumbers.Sort();
+                                    listNumbers.Reverse();
+                                    Console.WriteLine("\nA ORDEM DECRESCENTE DA LISTA DE NÚMEROS É: ");
+
+                                    foreach (var itens in listNumbers) {
+                                        Console.WriteLine("\t{ " + itens + " }");
+                                    }
+
+                                }
 
                                 break;
 
+                                //--------------------- Fim: Imprimir em ordem decrescente a Lista --------------------------
 
                             } else if (choiceList == 5) {
 
-                                calculator.ListCalculatorDuplicate(); // Mostrar os itens duplicados na Lista
+                                //------------------------- Imprimir Itens Duplicado na Lista -------------------------------
+
+                                if (listNumbers.Count == 0) {
+
+                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
+
+                                } else {
+
+                                    var numDuplicate = listNumbers.GroupBy(x => x) // LINQ com expressão Lambda
+                                                                  .Where(g => g.Count() > 1)
+                                                                  .Select(x => new { ELEMENTO = x.Key, REPETE = x.Count() })
+                                                                  .ToList();
+
+                                    Console.WriteLine(String.Join(", ", numDuplicate));
+
+                                }
 
                                 break;
 
+                                //----------------------- Fim: Imprimir Itens Duplicado na Lista ----------------------------
 
                             } else if (choiceList == 6) {
 
-                                calculator.ListCalculatorRemove(); // Remover todos os itens da Lista
+                                //--------------------------- Remoção do Itens da Lista -------------------------------------
+
+                                listNumbers.Clear();
+
+                                Console.WriteLine("\nLISTA ESVAZIDA COM SUCESSO!");
 
                                 break;
+
+                                //------------------------- Fim: Remoção do Itens da Lista ----------------------------------
 
                             } else {
 

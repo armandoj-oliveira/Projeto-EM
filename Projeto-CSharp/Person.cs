@@ -4,6 +4,6 @@
 
     public string PersonName(string name) => this.Name = name; 
 
-    public int PersonAge(int age) => this.Age = age;
+    public int PersonAge(int age) => this.Age = age; 
 
 }
