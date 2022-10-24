@@ -1,19 +1,46 @@
-﻿public class Person {
+﻿using System.Collections;
+
+public class Person {
 
     private string Name { get; set; }
     private uint Age { get; set; }
+
+    public Hashtable personValidation = new Hashtable();
 
     public string PersonName(string name) => this.Name = name; 
 
     public uint PersonAge(uint age) => this.Age = age;
 
-    public override bool Equals(object? obj) {
-        return obj is Person person &&
-               Name == person.Name &&
-               Age == person.Age;
-    }
+    //public void Adicionar(string name, uint age) {
 
-    public override int GetHashCode() {
-        return HashCode.Combine(Name, Age);
-    }
+    //    personValidation[name] = age;
+
+    //}
+
+    //public void Imprimir() {
+
+    //    foreach(DictionaryEntry persons in personValidation) {
+        
+    //        string name = (string)persons.Key;
+    //        uint age = (uint)persons.Value;
+    //        Console.WriteLine($"Nome: {name}, Idade: {age}");
+
+    //    }
+
+    //}
+
+    //public void Verificar(string name) {
+
+    //    if (Name == name) {
+
+    //        Console.WriteLine("JÁ CADASTRADO!");
+
+    //    } else {
+
+    //        Console.WriteLine("Pode continuar!");
+
+    //    }
+
+
+    //}
 }

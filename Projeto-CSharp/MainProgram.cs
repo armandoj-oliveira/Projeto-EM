@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Text.RegularExpressions;
 
 class MainProgram {
@@ -36,22 +36,20 @@ class MainProgram {
         string name = Console.ReadLine();
         person.PersonName(name);
 
-        if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) // Indica se a expressão regular encontra uma correspondência na cadeia de caracteres de entrada.
-        {                                         // Caso essa afirmativa seja falsa
-
+        if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) {  // Indica se a expressão regular encontra uma correspondência na cadeia de caracteres de entrada.
+                                                     // Caso essa afirmativa seja falsa
             checkNameError(); // Imprime Mensagem de Erro - Nome Inválido
 
-        } else // Caso a afirmativa for verdadeira, o algoritmo continua
-          {
+        } else { // Caso a afirmativa for verdadeira, o algoritmo continua
+
 
             Console.Write("\nINFORME SUA IDADE: ");
             byte.TryParse(Console.ReadLine(), out byte choiceAge); // out - argumentos sejam passados por referência
             uint age = choiceAge; // Conversão Implícita
             person.PersonAge(age);
 
-            if (age < 0 || age > 100)            // Verificar a Idade do Usuário é menor que 0 ou maior que 100
-            {                                    // Caso essa afirmativa seja verdadeira
-
+            if (age < 0 || age > 130) {           // Verificar a Idade do Usuário é menor que 0 ou maior que 130
+                                                  // Caso essa afirmativa seja verdadeira
                 checkAgeError(); // Imprime Mensagem de Erro - Idade Inválida
 
             } else {  // Caso a afirmativa for falsa, o algoritmo continua
@@ -117,10 +115,11 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA ADIÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                object numberValue = firstValueNumber;
-                                object numberValue = secondValueNumber;
+                                object firstObj = firstValueNumber;         // Boxing
+                                object secondObj = secondValueNumber;
 
-                                listNumbers.Add(numberValue);
+                                listNumbers.Add((double)firstObj);
+                                listNumbers.Add((double)secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -159,8 +158,11 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA SUBTRAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                listNumbers.Add(firstValueNumber);
-                                listNumbers.Add(secondValueNumber);
+                                object firstObj = firstValueNumber;         // Boxing
+                                object secondObj = secondValueNumber;
+
+                                listNumbers.Add((double)firstObj);
+                                listNumbers.Add((double)secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -199,8 +201,11 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA MULTIPLICAÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                listNumbers.Add(firstValueNumber);
-                                listNumbers.Add(secondValueNumber);
+                                object firstObj = firstValueNumber;         // Boxing
+                                object secondObj = secondValueNumber;
+
+                                listNumbers.Add((double)firstObj);
+                                listNumbers.Add((double)secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -239,8 +244,11 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA DIVISÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                listNumbers.Add(firstValueNumber);
-                                listNumbers.Add(secondValueNumber);
+                                object firstObj = firstValueNumber;         // Boxing
+                                object secondObj = secondValueNumber;
+
+                                listNumbers.Add((double)firstObj);
+                                listNumbers.Add((double)secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -423,12 +431,10 @@ class MainProgram {
 
                     }
                 }
-
                 //---------------------- Fim do Laço de Repetição: Menu Sistema ----------------------------------
 
             }
         }
-
         //---------------------------- Fim do Sistema -----------------------------------
 
     }
