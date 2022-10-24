@@ -46,19 +46,17 @@ class MainProgram {
 
             Console.Write("\nINFORME SUA IDADE: ");
             byte.TryParse(Console.ReadLine(), out byte choiceAge); // out - argumentos sejam passados por referência
-            int age = choiceAge; // Conversão Implícita
+            uint age = choiceAge; // Conversão Implícita
             person.PersonAge(age);
 
-            if (age < 1 || age > 110) // Verificar a Idade do Usuário é menor que 0 ou maior que 100
-            {                         // Caso essa afirmativa seja verdadeira
+            if (age < 0 || age > 100)            // Verificar a Idade do Usuário é menor que 0 ou maior que 100
+            {                                    // Caso essa afirmativa seja verdadeira
 
                 checkAgeError(); // Imprime Mensagem de Erro - Idade Inválida
 
-            } else   // Caso a afirmativa for falsa, o algoritmo continua
-              {
+            } else {  // Caso a afirmativa for falsa, o algoritmo continua
 
                 int i = 1;
-
 
                 //---------------------- Laço de Repetição: Menu Sistema --------------------------------------
 
@@ -119,11 +117,14 @@ class MainProgram {
 
                                 Console.WriteLine($"\nA ADIÇÃO ENTRE OS NÚMEROS {firstValueNumber} E {secondValueNumber} É IGUAL A: {calculator.Result}");
 
-                                listNumbers.Add(firstValueNumber);
-                                listNumbers.Add(secondValueNumber);
+                                object numberValue = firstValueNumber;
+                                object numberValue = secondValueNumber;
 
-                                Console.WriteLine("\n DESEJA CONTINUAR? ");
+                                listNumbers.Add(numberValue);
+
+                                Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
+                                Console.Write("\n-> ");
 
                                 int.TryParse(Console.ReadLine(), out int choiceContinue);
 
@@ -161,8 +162,9 @@ class MainProgram {
                                 listNumbers.Add(firstValueNumber);
                                 listNumbers.Add(secondValueNumber);
 
-                                Console.WriteLine("\n DESEJA CONTINUAR? ");
+                                Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
+                                Console.Write("\n-> ");
 
                                 int.TryParse(Console.ReadLine(), out int choiceContinue);
 
@@ -200,8 +202,9 @@ class MainProgram {
                                 listNumbers.Add(firstValueNumber);
                                 listNumbers.Add(secondValueNumber);
 
-                                Console.WriteLine("\n DESEJA CONTINUAR? ");
+                                Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
+                                Console.Write("\n-> ");
 
                                 int.TryParse(Console.ReadLine(), out int choiceContinue);
 
@@ -239,8 +242,9 @@ class MainProgram {
                                 listNumbers.Add(firstValueNumber);
                                 listNumbers.Add(secondValueNumber);
 
-                                Console.WriteLine("\n DESEJA CONTINUAR? ");
+                                Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
+                                Console.Write("\n-> ");
 
                                 int.TryParse(Console.ReadLine(), out int choiceContinue);
 
