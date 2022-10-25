@@ -1,6 +1,9 @@
 ﻿class Calculator : IOperations // os métodos da interface são herdados pela classe
 {
 
+
+    List<double> listNumbers = new List<double>();
+
     public double Result;
     public double FirstNum;
     public double SecondNum;

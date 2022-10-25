@@ -9,12 +9,14 @@ class MainProgram {
 
         //---------------------------- Lista Genérica ----------------------------------------
 
-        List<double> listNumbers = new List<double>();
+        List<string> listPersons = new List<string> { "Armando", "Pedro", "Isabella" };
 
         //-------------------------- Criação de Objetos --------------------------------------
 
+        ManipulationListCalculator listCalculator = new ManipulationListCalculator();
         Calculator calculator = new Calculator();
         Person person = new Person();
+        Person newPerson = new Person();
         PrintOut print = new PrintOut();
 
         //-------------------------- Criação de Delegates ------------------------------------
@@ -28,7 +30,7 @@ class MainProgram {
         MenuSystem messageLater = new MenuSystem(print.PrintMessageLater);
         MenuSystem messageError = new MenuSystem(print.PrintMessageError);
 
-        //----------------------------------------------------------------
+        //------------------------------------------------------------------------------------
 
         menuPerson(); // Mensagem de Resgistro da Pessoa
 
@@ -36,23 +38,31 @@ class MainProgram {
         string name = Console.ReadLine();
         person.PersonName(name);
 
-        if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) {  // Indica se a expressão regular encontra uma correspondência na cadeia de caracteres de entrada.
-                                                     // Caso essa afirmativa seja falsa
+        if (!Regex.IsMatch(name, @"^[a-zA-Z]+$")) {
+
             checkNameError(); // Imprime Mensagem de Erro - Nome Inválido
 
         } else { // Caso a afirmativa for verdadeira, o algoritmo continua
-
 
             Console.Write("\nINFORME SUA IDADE: ");
             byte.TryParse(Console.ReadLine(), out byte choiceAge); // out - argumentos sejam passados por referência
             uint age = choiceAge; // Conversão Implícita
             person.PersonAge(age);
 
-            if (age < 0 || age > 130) {           // Verificar a Idade do Usuário é menor que 0 ou maior que 130
-                                                  // Caso essa afirmativa seja verdadeira
+            if (age < 0 || age > 130) {
+
                 checkAgeError(); // Imprime Mensagem de Erro - Idade Inválida
 
-            } else {  // Caso a afirmativa for falsa, o algoritmo continua
+            } else {
+
+                //listPersons.Add(name);
+                //listPersons.Add("Armando");
+                //Console.WriteLine(listPersons.Equals(listPersons));
+
+                //person.PersonName(name);
+                //newPerson.PersonName("Armando");
+
+                //Console.WriteLine(person.Equals(newPerson));
 
                 int i = 1;
 
@@ -118,8 +128,8 @@ class MainProgram {
                                 object firstObj = firstValueNumber;         // Boxing
                                 object secondObj = secondValueNumber;
 
-                                listNumbers.Add((double)firstObj);
-                                listNumbers.Add((double)secondObj);
+                                listCalculator.ListAdd(firstObj);
+                                listCalculator.ListAdd(secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -161,8 +171,8 @@ class MainProgram {
                                 object firstObj = firstValueNumber;         // Boxing
                                 object secondObj = secondValueNumber;
 
-                                listNumbers.Add((double)firstObj);
-                                listNumbers.Add((double)secondObj);
+                                listCalculator.ListAdd(firstObj);
+                                listCalculator.ListAdd(secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -204,8 +214,8 @@ class MainProgram {
                                 object firstObj = firstValueNumber;         // Boxing
                                 object secondObj = secondValueNumber;
 
-                                listNumbers.Add((double)firstObj);
-                                listNumbers.Add((double)secondObj);
+                                listCalculator.ListAdd(firstObj);
+                                listCalculator.ListAdd(secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -247,8 +257,8 @@ class MainProgram {
                                 object firstObj = firstValueNumber;         // Boxing
                                 object secondObj = secondValueNumber;
 
-                                listNumbers.Add((double)firstObj);
-                                listNumbers.Add((double)secondObj);
+                                listCalculator.ListAdd(firstObj);
+                                listCalculator.ListAdd(secondObj);
 
                                 Console.WriteLine("\nDESEJA CONTINUAR?");
                                 Console.WriteLine("\t1 - SIM\t\t2 - NÃO");
@@ -302,115 +312,49 @@ class MainProgram {
 
                                 //----------------------------- Imprimir Números da Lista -----------------------------------
 
-                                if (listNumbers.Count == 0) {                                    // Verifica se tem itens na Lista. 
-                                                                                                 // Se não tiver nada na Lista, imprime a mensagem que não contém nada
-                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");   // Se tiver algo na Lista, imprime na tela os valores
-
-                                } else {
-
-                                    Console.WriteLine($"\nOS NÚMEROS INSERIDOS NO SISTEMA SÂO: ");
-
-                                    foreach (var itens in listNumbers) {
-                                        Console.WriteLine("\t{ " + itens + " }");
-                                    }
-
-                                }
+                                listCalculator.ListPrint();
 
                                 break;
-
-                                //---------------------------- Fim: Imprimir Números da Lista -------------------------------
 
                             } else if (choiceList == 2) {
 
                                 //----------------------- Imprimir a quantidade de Números na Lista -------------------------
 
-                                Console.WriteLine($"EXITEM {listNumbers.Count} ITENS NA LISTA!");
+                                listCalculator.ListCountIntes();
 
                                 break;
-
-                                //-------------------- Fim: Imprimir a quantidade de Números na Lista -----------------------
 
                             } else if (choiceList == 3) {
 
                                 //------------------------- Imprimir em ordem crescente a Lista -----------------------------
 
-                                if (listNumbers.Count == 0) {
-
-                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
-
-                                } else {
-
-                                    listNumbers.Sort();
-                                    Console.WriteLine("\nA ORDEM CRESCENTE DA LISTA DE NÚMEROS É: ");
-
-                                    foreach (var itens in listNumbers) {
-                                        Console.WriteLine("\t{ " + itens + " }");
-                                    }
-
-                                }
+                                listCalculator.ListGrowning();
 
                                 break;
-
-                                //---------------------- Fim: Imprimir em ordem crescente a Lista ---------------------------
 
                             } else if (choiceList == 4) {
 
                                 //----------------------- Imprimir em ordem decrescente a Lista -----------------------------
 
-                                if (listNumbers.Count == 0) {
-
-                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
-
-                                } else {
-
-                                    listNumbers.Sort();
-                                    listNumbers.Reverse();
-                                    Console.WriteLine("\nA ORDEM DECRESCENTE DA LISTA DE NÚMEROS É: ");
-
-                                    foreach (var itens in listNumbers) {
-                                        Console.WriteLine("\t{ " + itens + " }");
-                                    }
-
-                                }
+                                listCalculator.ListDescending();
 
                                 break;
-
-                                //--------------------- Fim: Imprimir em ordem decrescente a Lista --------------------------
 
                             } else if (choiceList == 5) {
 
                                 //------------------------- Imprimir Itens Duplicado na Lista -------------------------------
 
-                                if (listNumbers.Count == 0) {
-
-                                    Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
-
-                                } else {
-
-                                    var numDuplicate = listNumbers.GroupBy(x => x) // LINQ com expressão Lambda
-                                                                  .Where(g => g.Count() > 1)
-                                                                  .Select(x => new { ELEMENTO = x.Key, REPETE = x.Count() })
-                                                                  .ToList();
-
-                                    Console.WriteLine(String.Join(", ", numDuplicate));
-
-                                }
+                                listCalculator.ListDuplicateItens();
 
                                 break;
-
-                                //----------------------- Fim: Imprimir Itens Duplicado na Lista ----------------------------
 
                             } else if (choiceList == 6) {
 
                                 //--------------------------- Remoção do Itens da Lista -------------------------------------
 
-                                listNumbers.Clear();
-
-                                Console.WriteLine("\nLISTA ESVAZIDA COM SUCESSO!");
+                                listCalculator.ListRemoveItens();
 
                                 break;
-
-                                //------------------------- Fim: Remoção do Itens da Lista ----------------------------------
 
                             } else {
 
