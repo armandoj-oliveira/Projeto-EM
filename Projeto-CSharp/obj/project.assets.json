@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Escolar Manager\\.nuget\\packages\\": {},
+    "C:\\Users\\ajvdo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Escolar Manager\\Documents\\Linguagem C#\\Estudos\\EstudosDaLInguagemCSharp\\Projeto-CSharp\\Projeto-CSharp\\Projeto-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\ajvdo\\Documents\\Projeto\\Projeto-CSharp\\Projeto-CSharp.csproj",
       "projectName": "Projeto-CSharp",
-      "projectPath": "C:\\Users\\Escolar Manager\\Documents\\Linguagem C#\\Estudos\\EstudosDaLInguagemCSharp\\Projeto-CSharp\\Projeto-CSharp\\Projeto-CSharp.csproj",
-      "packagesPath": "C:\\Users\\Escolar Manager\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Escolar Manager\\Documents\\Linguagem C#\\Estudos\\EstudosDaLInguagemCSharp\\Projeto-CSharp\\Projeto-CSharp\\obj\\",
+      "projectPath": "C:\\Users\\ajvdo\\Documents\\Projeto\\Projeto-CSharp\\Projeto-CSharp.csproj",
+      "packagesPath": "C:\\Users\\ajvdo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ajvdo\\Documents\\Projeto\\Projeto-CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Escolar Manager\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ajvdo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

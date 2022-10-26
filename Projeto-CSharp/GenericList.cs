@@ -1,26 +1,27 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 class GenericList<T> {
 
-    List<T> listCalculator = new List<T>();
-    List<T> personsRegister = new List<T>();
+    public List<T> ListCalculator = new List<T>();
+    public List<T> PersonsRegister = new List<T>();
 
 }
 class ManipulationListCalculator {
 
-    List<double> listNumbers = new List<double>();
+    GenericList<double> listNumbers = new GenericList<double>();
 
     //------------------------------- MÉTODOS PARA MANIPUAÇÂO DA LISTA ----------------------------------
 
     public void ListAdd(object number) {
 
-        listNumbers.Add((double)number);
+        listNumbers.ListCalculator.Add((double)number);
 
     }
 
     public void ListPrint() {
 
-        if (listNumbers.Count == 0) {
+        if (listNumbers.ListCalculator.Count == 0) {
 
             Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
@@ -28,7 +29,7 @@ class ManipulationListCalculator {
 
             Console.WriteLine($"\nOS NÚMEROS INSERIDOS NO SISTEMA SÂO: ");
 
-            foreach (var itens in listNumbers) {
+            foreach (var itens in listNumbers.ListCalculator) {
 
                 Console.WriteLine("\t{ " + itens + " }");
             }
@@ -39,24 +40,24 @@ class ManipulationListCalculator {
 
     public void ListCountIntes() {
 
-        listNumbers.Count();
+        listNumbers.ListCalculator.Count();
 
-        Console.WriteLine($"EXITEM {listNumbers.Count} ITENS NA LISTA!");
+        Console.WriteLine($"EXITEM {listNumbers.ListCalculator.Count} ITENS NA LISTA!");
 
     }
 
     public void ListGrowning() {
 
-        if (listNumbers.Count == 0) {
+        if (listNumbers.ListCalculator.Count == 0) {
 
             Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
 
-            listNumbers.Sort();
+            listNumbers.ListCalculator.Sort();
             Console.WriteLine("\nA ORDEM CRESCENTE DA LISTA DE NÚMEROS É: ");
 
-            foreach (var itens in listNumbers) {
+            foreach (var itens in listNumbers.ListCalculator) {
 
                 Console.WriteLine("\t{ " + itens + " }");
             }
@@ -67,17 +68,17 @@ class ManipulationListCalculator {
 
     public void ListDescending() {
 
-        if (listNumbers.Count == 0) {
+        if (listNumbers.ListCalculator.Count == 0) {
 
             Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
 
-            listNumbers.Sort();
-            listNumbers.Reverse();
+            listNumbers.ListCalculator.Sort();
+            listNumbers.ListCalculator.Reverse();
             Console.WriteLine("\nA ORDEM DECRESCENTE DA LISTA DE NÚMEROS É: ");
 
-            foreach (var itens in listNumbers) {
+            foreach (var itens in listNumbers.ListCalculator) {
 
                 Console.WriteLine("\t{ " + itens + " }");
             }
@@ -87,30 +88,38 @@ class ManipulationListCalculator {
 
     public void ListDuplicateItens() {
 
-        if (listNumbers.Count == 0) {
+        if (listNumbers.ListCalculator.Count == 0) {
 
             Console.WriteLine("\nNÃO EXISTE NENHUM NÚMERO NA LISTA!");
 
         } else {
 
-            var numDuplicate = listNumbers.GroupBy(x => x) // LINQ com expressão Lambda
-                                          .Where(g => g.Count() > 1)
-                                          .Select(x => new { ELEMENTO = x.Key, REPETE = x.Count() })
-                                          .ToList();
+            var numDuplicate = listNumbers.ListCalculator.GroupBy(x => x) // LINQ com expressão Lambda
+                                                         .Where(g => g.Count() > 1)
+                                                         .Select(x => new { ELEMENTO = x.Key, REPETE = x.Count() })
+                                                         .ToList();
 
             Console.WriteLine(String.Join(", ", numDuplicate));
-
 
         }
     }
 
     public void ListRemoveItens() {
 
-        listNumbers.Clear();
+        listNumbers.ListCalculator.Clear();
 
         Console.WriteLine("\nLISTA ESVAZIDA COM SUCESSO!");
 
     }
+}
 
+class ManipulationListPerson {
 
+    GenericList<string> listPersons = new GenericList<string>();
+
+    public void personAdd(string name) {
+
+        listPersons.PersonsRegister.Add(name);
+
+    }
 }

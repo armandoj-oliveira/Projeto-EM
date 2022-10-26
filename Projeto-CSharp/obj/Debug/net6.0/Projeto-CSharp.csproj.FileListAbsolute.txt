@@ -13,3 +13,18 @@ C:\Users\Escolar Manager\Documents\Linguagem C#\Estudos\EstudosDaLInguagemCSharp
 C:\Users\Escolar Manager\Documents\Linguagem C#\Estudos\EstudosDaLInguagemCSharp\Projeto-CSharp\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.pdb
 C:\Users\Escolar Manager\Documents\Linguagem C#\Estudos\EstudosDaLInguagemCSharp\Projeto-CSharp\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.genruntimeconfig.cache
 C:\Users\Escolar Manager\Documents\Linguagem C#\Estudos\EstudosDaLInguagemCSharp\Projeto-CSharp\Projeto-CSharp\obj\Debug\net6.0\ref\Projeto-CSharp.dll
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.csproj.AssemblyReference.cache
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.AssemblyInfoInputs.cache
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.AssemblyInfo.cs
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.dll
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\refint\Projeto-CSharp.dll
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.pdb
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\bin\Debug\net6.0\Projeto-CSharp.exe
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\bin\Debug\net6.0\Projeto-CSharp.deps.json
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\bin\Debug\net6.0\Projeto-CSharp.runtimeconfig.json
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\bin\Debug\net6.0\Projeto-CSharp.dll
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\bin\Debug\net6.0\Projeto-CSharp.pdb
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\Projeto-CSharp.genruntimeconfig.cache
+C:\Users\ajvdo\Documents\Projeto\Projeto-CSharp\obj\Debug\net6.0\ref\Projeto-CSharp.dll

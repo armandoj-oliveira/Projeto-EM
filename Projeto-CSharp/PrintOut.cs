@@ -1,11 +1,32 @@
 ﻿class PrintOut {
 
+    public void PrintRegister() {
+
+        Console.WriteLine("\n//-------------------------------------------------------------------------------//");
+        Console.WriteLine("//-------------- ANTES DE TUDO, REALIZE SEU LOGIN/CADASTRO! ---------------------//");
+        Console.WriteLine("//-------------------------------------------------------------------------------//");
+
+        Console.WriteLine("\n1 - JÁ SOU CADASTRADO NO SISTEMA");
+        Console.WriteLine("2 - NÃO SOU CADASTRADO NO SISTEMA");
+        Console.WriteLine("0 - SAIR");
+
+    }
+
     //------------------------- Mensagem para Registro do Usuário ---------------------------------------
     public void PrintPerson() {
 
         Console.WriteLine("\n//-------------------------------------------------------------------------------//");
         Console.WriteLine("//---------------------- SEJA MUITO(A) BEM VINDO(A)! ----------------------------//");
-        Console.WriteLine("//------------------- ANTES DE TUDO, REALIZE SEU LOGIN! -------------------------//");
+        Console.WriteLine("//--------------------------- REALIZE SEU LOGIN! --------------------------------//");
+        Console.WriteLine("//-------------------------------------------------------------------------------//");
+
+    }
+
+    public void PrintNewPerson() {
+
+        Console.WriteLine("\n//-------------------------------------------------------------------------------//");
+        Console.WriteLine("//---------------------- SEJA MUITO(A) BEM VINDO(A)! ----------------------------//");
+        Console.WriteLine("//----------------------- REALIZE SEU SEU CADASTRO! -----------------------------//");
         Console.WriteLine("//-------------------------------------------------------------------------------//");
 
     }
